@@ -11,9 +11,7 @@ var totaltestcases int
 var tot []int
 
 func main() {
-
 	totaltestcases := testcaseinput()
-
 	fmt.Println("Total Test Cases : " + strconv.Itoa(totaltestcases))
 }
 
@@ -30,7 +28,7 @@ func testcaseinput() int {
 		testcaseinput()
 	}
 	if err := scanner.Err(); err != nil {
-		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+		fmt.Fprintln(os.Stderr, "Reading standard input:", err)
 	}
 	return outerloop
 }

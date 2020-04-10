@@ -12,6 +12,11 @@ var totaltcs int
 var numberofint int
 var inputs []int
 var index int
+var resultone int
+var resultonetemp int
+
+var resulttwo int
+var resulttwotemp int
 
 func main() {
 	// totaltcs := testcaseinput()
@@ -23,6 +28,17 @@ func main() {
 	testArray := strings.Fields(getinput())
 	stringtoarray(testArray, index)
 	fmt.Println(inputs)
+	stepone(inputs, 0)
+	fmt.Println(resultonetemp)
+}
+func stepone(arr []int, loc int) {
+	if loc < len(arr) {
+		resultonetemp += (arr[loc] * arr[loc])
+		loc++
+		stepone(arr, loc)
+	} else {
+		return
+	}
 }
 
 func stringtoarray(arr []string, loc int) {

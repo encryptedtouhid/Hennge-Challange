@@ -7,28 +7,28 @@ import (
 	"strconv"
 )
 
-var totaltestcases int
+var totaltcs int
 var tot []int
 
 func main() {
-	totaltestcases := testcaseinput()
-	fmt.Println("Total Test Cases : " + strconv.Itoa(totaltestcases))
+	totaltcs := testcaseinput()
+	fmt.Println("Total Test Cases : " + strconv.Itoa(totaltcs))
 }
 
 func testcaseinput() int {
+	var totaltestcases int
 
-	var outerloop int
 	fmt.Print("Total Number Of Test Cases : ")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 
-	outerloop, err := strconv.Atoi(scanner.Text())
+	totaltestcases, err := strconv.Atoi(scanner.Text())
 	if err != nil {
 		fmt.Println("Not a Valid Number. Please try again")
-		testcaseinput()
+		return testcaseinput()
 	}
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "Reading standard input:", err)
 	}
-	return outerloop
+	return totaltestcases
 }

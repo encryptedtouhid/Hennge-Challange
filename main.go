@@ -5,17 +5,36 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 var totaltcs int
 var numberofint int
-var tot []int
+var inputs []int
+var index int
 
 func main() {
-	totaltcs := testcaseinput()
-	numberofint := inputount()
-	fmt.Println("Total Test Cases : " + strconv.Itoa(totaltcs))
-	fmt.Println("Total Number of Inputs : " + strconv.Itoa(numberofint))
+	// totaltcs := testcaseinput()
+	// numberofint := inputount()
+	// fmt.Println("Total Test Cases : " + strconv.Itoa(totaltcs))
+	// fmt.Println("Total Number of Inputs : " + strconv.Itoa(numberofint))
+
+	// fmt.Println("Inputs : " + getinput())
+	testArray := strings.Fields(getinput())
+	stringtoarray(testArray, index)
+	fmt.Println(inputs)
+}
+
+func stringtoarray(arr []string, loc int) {
+	if loc < len(arr) {
+		val, err := strconv.Atoi(arr[loc])
+		if err == nil {
+			// fmt.Print(val)
+			index = index + 1
+			inputs = append(inputs, val)
+			stringtoarray(arr, index)
+		}
+	}
 }
 
 func testcaseinput() int {
@@ -55,4 +74,11 @@ func inputount() int {
 		fmt.Fprintln(os.Stderr, "Reading standard input:", err)
 	}
 	return inputcount
+}
+
+func getinput() string {
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	input := scanner.Text()
+	return input
 }

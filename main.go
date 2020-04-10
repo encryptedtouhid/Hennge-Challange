@@ -53,7 +53,7 @@ func testcaseinput() int {
 
 	var totaltestcases int
 
-	fmt.Print("Total Number Of Test Cases : ")
+	// fmt.Print("Total Number Of Test Cases : ")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 
@@ -72,7 +72,7 @@ func inputount() int {
 
 	var inputcount int
 
-	fmt.Print("Total Number Of Input : ")
+	// fmt.Print("Total Number Of Input : ")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 

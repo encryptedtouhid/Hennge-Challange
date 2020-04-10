@@ -20,11 +20,7 @@ var result int
 func main() {
 	testcaseinput()
 	inputount()
-	// fmt.Println("Total Test Cases : " + strconv.Itoa(totaltcs))
-	// fmt.Println("Total Number of Inputs : " + strconv.Itoa(numberofint))
-	// fmt.Println("Inputs : " + getinput())
-	testArray := strings.Fields(getinput())
-	stringtoarray(testArray, index)
+	stringtoarray(strings.Fields(getinput()), index)
 	stepone(inputs, 0)
 	fmt.Println(resultonetemp)
 

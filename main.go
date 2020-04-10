@@ -15,8 +15,7 @@ var index int
 var resultone int
 var resultonetemp int
 
-var resulttwo int
-var resulttwotemp int
+var result int
 
 func main() {
 	// totaltcs := testcaseinput()
@@ -26,11 +25,15 @@ func main() {
 
 	// fmt.Println("Inputs : " + getinput())
 	testArray := strings.Fields(getinput())
+
 	stringtoarray(testArray, index)
 	fmt.Println(inputs)
+
 	stepone(inputs, 0)
 	fmt.Println(resultonetemp)
+
 }
+
 func stepone(arr []int, loc int) {
 	if loc < len(arr) {
 		resultonetemp += (arr[loc] * arr[loc])
@@ -45,7 +48,6 @@ func stringtoarray(arr []string, loc int) {
 	if loc < len(arr) {
 		val, err := strconv.Atoi(arr[loc])
 		if err == nil {
-			// fmt.Print(val)
 			index = index + 1
 			inputs = append(inputs, val)
 			stringtoarray(arr, index)

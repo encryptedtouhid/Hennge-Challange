@@ -25,10 +25,7 @@ func main() {
 
 	// fmt.Println("Inputs : " + getinput())
 	testArray := strings.Fields(getinput())
-
 	stringtoarray(testArray, index)
-	fmt.Println(inputs)
-
 	stepone(inputs, 0)
 	fmt.Println(resultonetemp)
 
@@ -49,7 +46,9 @@ func stringtoarray(arr []string, loc int) {
 		val, err := strconv.Atoi(arr[loc])
 		if err == nil {
 			index = index + 1
-			inputs = append(inputs, val)
+			if val >= 0 {
+				inputs = append(inputs, val)
+			}
 			stringtoarray(arr, index)
 		}
 	}
